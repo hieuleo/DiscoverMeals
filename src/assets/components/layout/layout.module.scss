@@ -1,0 +1,235 @@
+@import '../../../rootStyles.module.scss';
+
+.layout{
+    color: $while-color;
+    //header
+    .header{
+        background-color: $background-color-sub;
+        color: #000;
+        height: 9.4rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        z-index: 10;
+        .logo{
+            display: flex;
+            .logoLink{
+                .logoImg{
+                    width: 5.8rem;
+                    margin-right: 1.2rem;
+                }
+                P{
+                    font-family: $font-dancing;
+                    font-weight: bold;
+                    color: $black-color;
+                    display: inline-block;
+                    font-size: 2.8rem;
+                    margin: 0 !important;
+                }
+                i{
+                    font-size: 1.8rem;
+                    font-weight: bold;
+                    color: $background-color-icon;
+                }
+            }
+        };
+
+        .navBar{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .navBarLink{
+                text-align: center;
+                color: $black-color;
+                font-size: 1.9rem;
+                font-weight: 500;
+                opacity: 0.8;
+                transition: all 0.2s ease;
+                position: relative;
+                i{
+                    padding:  0 0 0 0.5rem;
+                    position: relative;
+                    top: .2rem;               
+                    color: $background-color-icon;
+                }
+            }
+
+            .navBarLink::after{
+                content: '';
+                display: inline-block;
+                background-color: $text-color-sub;
+                width: 0%;
+                height: 1px;
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                transition: all .2s linear;
+            }
+
+            .navBarLink::after{
+                content: '';
+                display: inline-block;
+                background-color: $text-color-sub;
+                width: 0%;
+                height: 1px;
+                position: absolute;
+                bottom: -1px;
+                left: 0;
+                transition: all .2s linear;
+            }
+
+            .navBarLink:hover{
+                transition: all 0.2s ease;
+                opacity: 1;
+            };
+
+            .home,
+            .search,
+            .favourite,
+            .contact{
+                opacity: 1!important;
+            };
+
+            .navBarLink:hover::after{
+                content: '';
+                display: inline-block;
+                background-color: $text-color-sub;
+                width: 100%!important;
+                height: 1px;
+                position: absolute;
+                transition: all .2s linear;
+                bottom: -1px;
+                left: 0;
+            }
+
+            .home.navBarLink::after,
+            .search.navBarLink::after,
+            .favourite.navBarLink::after,
+            .contact.navBarLink::after{
+                content: '';
+                display: inline-block;
+                background-color: $text-color-sub;
+                width: 100%!important;
+                height: 1px;
+                position: absolute;
+                transition: all .2s linear;
+                bottom: -1px;
+                left: 0;
+            }
+        };
+
+        .athur{
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            .login{
+                color: $while-color;
+                font-size: 1.8rem !important;
+                text-transform: capitalize;
+                background-color: $background-color-button;
+                padding: 1rem 2.4rem;
+                border-radius: 3.5rem;
+                i{
+                    margin-right:  .5rem;
+                }
+            };
+            .login:hover{
+                opacity: 0.9;
+            }
+        }
+    };
+
+    // container
+    .container{
+        min-height: 300px;
+    }
+
+    //footer
+    .footer{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $background-color-sub;
+        min-height: 265px;
+        padding: 2rem 0;
+
+        .info{
+            .logoLink{
+                display: flex;
+                align-items: center;
+                justify-self: center;
+                height: 100%;
+                .logoImg{
+                    width: 11rem;
+                    margin-right: 1.2rem;
+                };
+                P{
+                    font-family: $font-dancing;
+                    font-weight: bold;
+                    color: $black-color;
+                    display: inline-block;
+                    font-size: 3.4rem;
+                    margin: 0 !important;
+                };
+                i{
+                    font-size: 1.8rem;
+                    font-weight: bold;
+                    color: $background-color-icon;
+                };
+            };
+    
+            .infoLink{
+                display: flex;
+                margin-bottom: 1rem;
+                align-items: center;
+                justify-content: center;
+                a{
+                    margin: 0 2rem;
+                    i{
+                        color: $background-color-icon;
+                        font-size: 2.4rem;
+                    }
+                }
+            }
+
+        };
+
+        .footerItem{
+            display: flex;
+            flex-flow: column;
+            padding: 0 .5rem;
+            h2{
+                color: $black-color;
+                font-size: 2.2rem;
+                font-weight: 700;
+                padding: 1rem 0;
+            }
+            .footerItemLink{
+                display: flex;
+                justify-self: center;
+                align-items: center;
+                color: $text-color;
+                font-size: 1.6rem;
+                font-weight: 400;
+                margin: 0.3rem 0;
+                overflow-x: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                i{
+                    margin-right: 0.8rem;
+                    font-size: 1.4rem;
+                }
+            }
+        };
+    }
+
+    .copyright{
+        color: $text-color-sub;
+        font-size: 1.4rem;
+        padding: 2rem;
+        text-align: center;
+    }
+};

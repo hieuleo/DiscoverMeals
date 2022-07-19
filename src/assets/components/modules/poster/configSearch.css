@@ -1,0 +1,72 @@
+.ant-input-group-wrapper{
+    margin: 20px 0;
+  }
+  .ant-input-group-wrapper,
+  .ant-input-wrapper{
+    border-radius: 500px !important;
+    overflow: hidden !important;
+  }
+  .ant-input-group-addon{
+    border-radius: 500px !important;
+    overflow: hidden !important;
+    transform: translateX(-25%) !important;
+    z-index: 2 !important;
+  }
+  
+  .ant-input-affix-wrapper{
+    padding: 9px 25px !important;
+  }
+  
+  .ant-input-search-button {
+    height: 42px !important;
+    width: 90px !important;
+    background: linear-gradient(to right, #fdc55e 0%, #fdc55e 100%) !important;
+    border-color: transparent !important;
+  }
+  
+  .ant-input-search-button:hover{
+    opacity: 0.8;
+    transition: all 0.3s ease;
+  }
+  
+  .anticon-search{
+    font-size: 18px;
+  }
+  
+  .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover{
+    border-color: transparent !important;
+    border-right-width: 0px!important;
+  };
+  .ant-input-search .ant-input:focus, .ant-input-search .ant-input:hover{
+    border-right-width: 0px!important;
+    border-color: transparent !important;
+  };
+  .ant-input-search .ant-input:hover{
+    border-right-width: 0px!important;
+    border-color: transparent !important;
+  };
+
+  .ant-input-affix-wrapper-focused, .ant-input-affix-wrapper:focus{
+    border-color: transparent !important;
+    box-shadow: transparent !important;
+    border-right-width: 0px!important;
+    outline: 0;
+  }
+
+  .ant-input-affix-wrapper:focus {
+    border-color: transparent !important;
+    box-shadow: transparent !important;
+    border-right-width: 0px!important;
+    outline: 0;
+};
+
+.ant-input-search .ant-input-group .ant-input-affix-wrapper:not(:last-child){
+  border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+};
+
+.ant-input-search .ant-input:focus, .ant-input-search .ant-input:hover{
+  border-color: transparent !important;
+  border-width: 0px!important;
+  border-right-width: 0px!important;
+}

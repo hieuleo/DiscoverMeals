@@ -1,0 +1,57 @@
+@import '../../../rootStyles.module.scss';
+
+.cart{
+    min-height: 60rem!important;
+    padding: 0 2rem 3rem;
+    .header{
+        padding-top: 12rem;
+        h2{
+            padding: 2rem 0 ;
+            font-size: 2.8rem;
+            color: $black-color;
+            display: block;
+            text-align: center;
+            span{
+                color: #f54748;
+            }
+        }
+    }
+    .container{
+        border: 1px solid #ccc;
+        padding: 1rem;
+        position: relative;
+        margin: 1rem 0;
+        img{
+            width: 80%;
+            border-radius: 50%;
+        };
+        h2{
+            padding: 2rem 0 ;
+            font-size: 2.4rem;
+            color: $black-color;
+        };
+
+        p{
+            font-size: 1.6rem;
+            color: $text-color-sub;
+            span{
+                font-size: 1.9rem;
+                color: $black-color;
+            }
+        }
+        .btn{
+            background-color: $background-color-button;
+            padding: 0.3rem 2rem;
+            font-size: 1.8rem;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            cursor: pointer;
+            opacity: 0.9;
+        };
+        .btn:hover{
+            opacity: 1;
+        }
+        
+    }
+}

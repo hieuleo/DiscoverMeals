@@ -1,0 +1,58 @@
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: rgba(253, 231, 231, 0.3843137255);
+}
+
+h1, h2, h3, h4, h5, h6, P {
+  margin: 0;
+  padding: 0;
+}
+
+.poster {
+  background-color: #f54748;
+  padding: 1.2rem 0.5rem;
+  border-radius: 5.8rem;
+}
+.poster .header {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+.poster .header h2 {
+  color: #ffffff;
+  font-size: 3.4rem;
+  font-weight: bold;
+  padding: 0.5rem 0;
+}
+.poster .header p {
+  color: #ffffff;
+  font-size: 1.6rem;
+}
+.poster .header p span {
+  color: #fdc55e;
+}
+.poster .search {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 3.2rem;
+  border-radius: 1.2rem;
+  overflow: hidden;
+}/*# sourceMappingURL=posterBottom.module.css.map */

@@ -1,0 +1,55 @@
+// varliable::
+$blue-color: #3949ab;
+$red-color-light: #ee4750dc;
+$red-color-dark: #c92327;
+$while-color: #ffffff;
+$black-color: #000;
+$text-color: #2e2e2e;
+$text-color-sub: #595959;
+$background-color-hover: #fdececbe;
+$background-color-icon: #f54748;
+$background-color-button: #f54748;
+$background-color: #fef3f36b;
+$background-color-sub: #fee7e7;
+$background-color-sub-2: #fde7e762;
+$background-color-shadow: #fbe6e6; // modules
+$background-color-title: #fdecec; // modules
+$yellow-color: #fdc55e;
+$font-dancing: 'Dancing Script', cursive;
+
+// font-family: 'Dancing Script', cursive;
+// font-family: 'Roboto', sans-serif;
+
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none; border:none;
+    text-transform: capitalize;
+    // transition: all .2s linear;
+};
+
+*::selection{
+    // background: $blue-color;
+    // color: $text-color;
+};
+
+html{
+    font-family: 'Roboto', sans-serif;
+    font-size: 62.5%;
+}
+
+body{
+    background-color: $background-color-sub-2;
+    // overflow-x: hidden;
+}
+
+// html::-webkit-scrollbar{
+//     width:1.4rem;
+// }
+h1, h2, h3, h4, h5, h6,P{
+    margin: 0;
+    padding: 0;
+}

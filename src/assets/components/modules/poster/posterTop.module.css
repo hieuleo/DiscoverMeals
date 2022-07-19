@@ -1,0 +1,97 @@
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: rgba(253, 231, 231, 0.3843137255);
+}
+
+h1, h2, h3, h4, h5, h6, P {
+  margin: 0;
+  padding: 0;
+}
+
+.posterTop {
+  padding-top: 12.4rem;
+  font-size: 0.8rem;
+  background-color: rgba(253, 231, 231, 0.3843137255);
+}
+.posterTop .posterItem {
+  padding: 2rem;
+}
+.posterTop .posterItem .more {
+  color: #f54748;
+  background-color: #fdecec;
+  font-size: 1.8rem;
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  border-radius: 1.8rem;
+}
+.posterTop .posterItem .more img {
+  display: inline-block;
+  width: 20px;
+  margin: 0 !important;
+}
+.posterTop .posterItem .title {
+  padding: 3rem 2rem 1.8rem 0;
+  color: #000;
+  font-size: 5.8rem;
+  font-weight: bold;
+}
+.posterTop .posterItem .title span {
+  color: #f54748;
+}
+.posterTop .posterItem .message {
+  color: #595959;
+  font-size: 1.8rem;
+}
+.posterTop .posterItem .start {
+  color: #ffffff;
+  background-color: #f54748;
+  font-size: 2.4rem;
+  padding: 1rem 2.5rem;
+  margin-top: 2.5rem;
+  display: inline-block;
+  border-radius: 2.8rem;
+}
+.posterTop .posterItem .call {
+  color: #595959;
+  background-color: rgba(254, 243, 243, 0.4196078431);
+  font-size: 2.4rem;
+  padding: 1rem 2.5rem;
+  margin-top: 2.5rem;
+  margin-left: 2.5rem;
+  display: inline-block;
+  border-radius: 2.8rem;
+  border: 1px solid #fdecec;
+}
+.posterTop .posterItem .call i {
+  color: yellow;
+  padding-right: 0.3rem;
+}
+.posterTop .posterItem .call:hover {
+  border: 1px solid #fee7e7;
+  background-color: rgba(253, 236, 236, 0.7450980392);
+  transition: all 0.2s ease;
+}
+.posterTop .posterItem .start:hover {
+  background-color: rgba(238, 71, 80, 0.862745098);
+}
+.posterTop .posterItem img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}/*# sourceMappingURL=posterTop.module.css.map */

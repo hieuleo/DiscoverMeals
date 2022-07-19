@@ -1,0 +1,42 @@
+@import '../../../../rootStyles.module.scss';
+
+.poster{
+    padding: 13.4rem 0 6rem 0;
+    font-size: .8rem;
+    background-color: $background-color-sub-2;
+    display: flex!important;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    
+    h2{
+        font-size: 3.2rem;
+        font-weight: bold;
+        span{
+            color: $background-color-icon;
+            font-family: $font-dancing;
+            font-weight: 700;
+        };
+    };
+    p{
+        color: $text-color;
+        font-size: 1.7rem;
+        padding-top: 0.5rem;
+    };
+
+    .change{
+        .btn{
+            background-color: $background-color-button;
+            color: $while-color;
+            font-size: 1.7rem;
+            padding: .5rem 1.5rem;
+            border-radius: 2rem;
+            margin:0 .5rem;
+            opacity: 0.4;
+        };
+        .btn.active{
+            opacity: 1;
+        }
+        
+    }
+}

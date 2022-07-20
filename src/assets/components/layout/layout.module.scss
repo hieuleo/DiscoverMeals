@@ -2,6 +2,7 @@
 
 .layout{
     color: $while-color;
+    position: relative;
     //header
     .header{
         background-color: $background-color-sub;
@@ -120,6 +121,31 @@
             }
         };
 
+        .menu{
+            display: block;
+            text-align: center;
+            display: none;
+            i{
+                font-size: 5.8rem;
+                font-weight: bold;
+                display: inline;
+                // color: $background-color-icon;
+                cursor: pointer;
+            }
+            i:hover{
+                color: $background-color-icon;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .navBar{
+                display: none;
+            }
+            .menu{
+                display: block;
+            }
+        }
+
         .athur{
             position: relative;
             display: flex;
@@ -138,6 +164,14 @@
             };
             .login:hover{
                 opacity: 0.9;
+            }
+            .logout{
+                cursor: pointer;
+                i{
+                    margin-left: 0.8rem;
+                    margin-right:  0;
+
+                }
             }
         }
     };
@@ -232,4 +266,104 @@
         padding: 2rem;
         text-align: center;
     }
+    .mobi{
+        display: block;
+        position:fixed;
+        top: -100%;
+        right: 0;
+        left: 0;
+        bottom: 100%;
+        z-index: 100;
+        background-color: $background-color-button;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column;
+        .navBarLink{
+            text-align: center;
+            color: $while-color!important;
+            font-size: 2.8rem;
+            font-weight: 500;
+            opacity: 0.8;
+            transition: all 0.2s ease;
+            position: relative;
+            padding: 2rem 2rem;
+            i{
+                padding:  0 0 0 0.5rem;
+                position: relative;
+                top: .2rem;               
+                color: $while-color;
+            }
+        }
+
+        .navBarLink::after{
+            content: '';
+            display: inline-block;
+            background-color: $text-color-sub;
+            width: 0%;
+            height: 1px;
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            transition: all .2s linear;
+        }
+
+        .navBarLink::after{
+            content: '';
+            display: inline-block;
+            background-color: $text-color-sub;
+            width: 0%;
+            height: 1px;
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            transition: all .2s linear;
+        }
+
+        .navBarLink:hover{
+            transition: all 0.2s ease;
+            opacity: 1;
+        };
+
+        .home,
+        .search,
+        .favourite,
+        .contact{
+            opacity: 1!important;
+        };
+
+        .navBarLink:hover::after{
+            content: '';
+            display: inline-block;
+            background-color: $text-color-sub;
+            width: 100%!important;
+            height: 1px;
+            position: absolute;
+            transition: all .2s linear;
+            bottom: -1px;
+            left: 0;
+        }
+
+        .home.navBarLink::after,
+        .search.navBarLink::after,
+        .favourite.navBarLink::after,
+        .contact.navBarLink::after{
+            content: '';
+            display: inline-block;
+            background-color: $text-color-sub;
+            width: 100%!important;
+            height: 1px;
+            position: absolute;
+            transition: all .2s linear;
+            bottom: -1px;
+            left: 0;
+        }
+    };
+    .mobi.active{
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
 };
+

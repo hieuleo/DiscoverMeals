@@ -13,16 +13,21 @@ import { Row, Col, Button } from 'antd';
 import styles from './detail.module.css';
 import { getStateDataCart } from '../../redux/selector/cart/stateCart';
 import { addMeals } from '../../redux/reducer/cart/reducerCart';
+import { getStateUser} from '../../redux/selector/auth/stateAuth';
+import { useNavigate } from 'react-router-dom';
+
 const DetailsPage = () =>{
 
     let {id} = useParams();
     const dispatch = useDispatch()
+    const navigate = useNavigate();
 
-    const {loading,dataDetail,errorDetail, dataCart} = useSelector(createStructuredSelector({
+    const {loading,dataDetail,errorDetail, dataCart, user} = useSelector(createStructuredSelector({
         loading: getStateLoadingDetail,
         dataDetail: getStateDataDetail,
         errorDetail: getStateErrorDetail,
         dataCart: getStateDataCart,
+        user: getStateUser,
     }));
 
     useEffect(() =>{
@@ -30,11 +35,15 @@ const DetailsPage = () =>{
     },[])
 
     const addFavourite = (id, data) =>{
-        if (data.idMeal){
-            dispatch(addMeals(id, data))
+        if (user !== null){
+            if (data.idMeal){
+                dispatch(addMeals(id, data))
+            }
+        }else{
+            navigate("/login", { replace : true });
         }
     }
-    console.log(dataCart)
+
     return (
         <LayoutComponent>
             <Row>

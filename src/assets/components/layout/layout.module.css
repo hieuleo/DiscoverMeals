@@ -25,6 +25,7 @@ h1, h2, h3, h4, h5, h6, P {
 
 .layout {
   color: #ffffff;
+  position: relative;
 }
 .layout .header {
   background-color: #fee7e7;
@@ -134,6 +135,28 @@ h1, h2, h3, h4, h5, h6, P {
   bottom: -1px;
   left: 0;
 }
+.layout .header .menu {
+  display: block;
+  text-align: center;
+  display: none;
+}
+.layout .header .menu i {
+  font-size: 5.8rem;
+  font-weight: bold;
+  display: inline;
+  cursor: pointer;
+}
+.layout .header .menu i:hover {
+  color: #f54748;
+}
+@media (max-width: 1200px) {
+  .layout .header .navBar {
+    display: none;
+  }
+  .layout .header .menu {
+    display: block;
+  }
+}
 .layout .header .athur {
   position: relative;
   display: flex;
@@ -153,6 +176,13 @@ h1, h2, h3, h4, h5, h6, P {
 }
 .layout .header .athur .login:hover {
   opacity: 0.9;
+}
+.layout .header .athur .logout {
+  cursor: pointer;
+}
+.layout .header .athur .logout i {
+  margin-left: 0.8rem;
+  margin-right: 0;
 }
 .layout .container {
   min-height: 300px;
@@ -233,4 +263,97 @@ h1, h2, h3, h4, h5, h6, P {
   font-size: 1.4rem;
   padding: 2rem;
   text-align: center;
+}
+.layout .mobi {
+  display: block;
+  position: fixed;
+  top: -100%;
+  right: 0;
+  left: 0;
+  bottom: 100%;
+  z-index: 100;
+  background-color: #f54748;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+}
+.layout .mobi .navBarLink {
+  text-align: center;
+  color: #ffffff !important;
+  font-size: 2.8rem;
+  font-weight: 500;
+  opacity: 0.8;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 2rem 2rem;
+}
+.layout .mobi .navBarLink i {
+  padding: 0 0 0 0.5rem;
+  position: relative;
+  top: 0.2rem;
+  color: #ffffff;
+}
+.layout .mobi .navBarLink::after {
+  content: "";
+  display: inline-block;
+  background-color: #595959;
+  width: 0%;
+  height: 1px;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  transition: all 0.2s linear;
+}
+.layout .mobi .navBarLink::after {
+  content: "";
+  display: inline-block;
+  background-color: #595959;
+  width: 0%;
+  height: 1px;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  transition: all 0.2s linear;
+}
+.layout .mobi .navBarLink:hover {
+  transition: all 0.2s ease;
+  opacity: 1;
+}
+.layout .mobi .home,
+.layout .mobi .search,
+.layout .mobi .favourite,
+.layout .mobi .contact {
+  opacity: 1 !important;
+}
+.layout .mobi .navBarLink:hover::after {
+  content: "";
+  display: inline-block;
+  background-color: #595959;
+  width: 100% !important;
+  height: 1px;
+  position: absolute;
+  transition: all 0.2s linear;
+  bottom: -1px;
+  left: 0;
+}
+.layout .mobi .home.navBarLink::after,
+.layout .mobi .search.navBarLink::after,
+.layout .mobi .favourite.navBarLink::after,
+.layout .mobi .contact.navBarLink::after {
+  content: "";
+  display: inline-block;
+  background-color: #595959;
+  width: 100% !important;
+  height: 1px;
+  position: absolute;
+  transition: all 0.2s linear;
+  bottom: -1px;
+  left: 0;
+}
+.layout .mobi.active {
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
 }/*# sourceMappingURL=layout.module.css.map */

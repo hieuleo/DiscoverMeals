@@ -36,7 +36,6 @@ const SliderComponent = ({data,config, loading}) => {
             </Slider>
         )
     }
-    console.log(data)
     return (
         <Slider {...settings}>
             {

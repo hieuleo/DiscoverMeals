@@ -6,4 +6,8 @@
     font-size: .8rem;
     min-height: 20rem;
     position: relative;
+    text-transform:lowercase!important;
+    input{
+        text-transform:lowercase!important;
+    }
 }

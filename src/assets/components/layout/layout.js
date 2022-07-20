@@ -4,9 +4,26 @@ import clsx from 'clsx';
 import styles from './layout.module.css';
 import logo from '../../img/logo.webp';
 import { Link } from 'react-router-dom';
+import { 
+    getStateUser,
+  } from '../../redux/selector/auth/stateAuth';
+import { createStructuredSelector } from 'reselect';
+import { useSelector, useDispatch } from 'react-redux';
+import { authReducer } from '../../redux/reducer/auth/auth';
+import { useNavigate } from 'react-router-dom';
 
 const LayoutComponent = ({home, search, favourite, contact, children}) => {
-    console.log(favourite)
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+    const {user} = useSelector(createStructuredSelector({
+        user: getStateUser,
+    }));
+
+    const logoutEven = () => {
+        dispatch(authReducer.logoutSuccess())
+        navigate("/login", { replace : true });
+    }
+
     return( 
         <Row className={clsx(styles.layout)}>
             <Col span={24}>
@@ -41,12 +58,25 @@ const LayoutComponent = ({home, search, favourite, contact, children}) => {
                                 </Link>
                                 <Link to={'./'} className={clsx(styles.navBarLink, contact?styles.contact:null)}>contact</Link>
                             </Col>
-                            <Col span={7} className={clsx(styles.athur)}>
-                                <Link to={'/login'} className={clsx(styles.login)}>
-                                    <i className="fa-solid fa-right-to-bracket"></i>
-                                    login
-                                </Link>
+                            <Col span={10} className={clsx(styles.menu)}>
+                                <i className="fa-solid fa-bars"></i>
                             </Col>
+                            <Col span={7} className={clsx(styles.athur)}>
+                                {
+                                    user === null ? (
+                                        <Link to={'/login'} className={clsx(styles.login)}>
+                                            <i className="fa-solid fa-right-to-bracket"></i>
+                                            login
+                                        </Link>
+                                    ):(
+                                        <button to={'/login'} className={clsx(styles.login, styles.logout)} onClick={() =>{logoutEven()}}>
+                                            logout
+                                            <i className="fa-solid fa-right-from-bracket"></i>
+                                        </button>
+                                    )
+                                }
+                            </Col>
+
                         </Row>
                     </Col>
                 </Row>
@@ -124,6 +154,21 @@ const LayoutComponent = ({home, search, favourite, contact, children}) => {
                             <p>Copyright © 2022 - By QuocHieu</p>
                     </Col>
                 </Row>
+            </Col>
+            <Col span={24} className={clsx(styles.mobi)}>
+                <Link to={'/'} className={clsx(styles.navBarLink, home?styles.home:null)}>
+                    Home
+                    <i className="fa-solid fa-angle-down"></i>
+                </Link>
+                <Link to={'/search'} className={clsx(styles.navBarLink, search?styles.search:null)}>
+                    Search
+                    <i className="fa-solid fa-angle-down"></i>
+                </Link>
+                <Link to={'/favourite'} className={clsx(styles.navBarLink, favourite?styles.favourite:null)}>
+                    favourite
+                    <i className="fa-solid fa-angle-down"></i>
+                </Link>
+                <Link to={'./'} className={clsx(styles.navBarLink, contact?styles.contact:null)}>contact</Link>
             </Col>
         </Row>
     )

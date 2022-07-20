@@ -1,13 +1,43 @@
-import React from 'react';
-import { Row, Col, Button, Form, Input } from 'antd';
+import React, { useEffect, useState } from 'react';
+import { Row, Col, Button, Form, Input, message } from 'antd';
 import {LayoutComponent} from '../../components';
-import styles from'./login.module.css'
-const LoginPage = () => {
+import styles from'./login.module.css';
+import { useSelector, useDispatch } from 'react-redux';
+import {authLoginAction} from '../../redux/saga/auth/action';
+import { createStructuredSelector } from 'reselect';
+import { getStateUser} from '../../redux/selector/auth/stateAuth';
+import { useNavigate } from 'react-router-dom';
 
-  const onFinish = (values) => {
-    // login(values);
+const LoginPage = () => {
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch()
+  const {user} = useSelector(createStructuredSelector({
+    user: getStateUser,
+  }));
+
+  const [check, setCheck] = useState({});
+
+  const onFinish = async(values) => {
+      dispatch(authLoginAction(values));
+    if(values.password && values.username ) {
+      setCheck(values);
+    }else{
+      setCheck({});
+    }
   };
 
+  useEffect(() =>{
+    if (check.password && check.username) {
+      if(user!== null) {
+        navigate("/home", { replace : true });
+      }else{
+        message.error('Invalid account or password!!!');
+      }
+    }
+  },[user,check])
+  
+  
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
   };

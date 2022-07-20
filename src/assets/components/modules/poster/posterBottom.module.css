@@ -23,10 +23,49 @@ h1, h2, h3, h4, h5, h6, P {
   padding: 0;
 }
 
+@-webkit-keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes show2 {
+  from {
+    opacity: 0;
+    transform: translateX(5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+@keyframes show2 {
+  from {
+    opacity: 0;
+    transform: translateX(5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
 .poster {
   background-color: #f54748;
   padding: 1.2rem 0.5rem;
   border-radius: 5.8rem;
+  -webkit-animation: show linear 0.3s;
+          animation: show linear 0.3s;
 }
 .poster .header {
   display: flex;

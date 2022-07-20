@@ -1,11 +1,11 @@
-import React,{ useEffect, useState} from 'react';
+import React,{useState} from 'react';
 import { Row, Col, Input } from 'antd';
 import styles from './poster.module.css';
 import clsx from 'clsx';
 import { userSearchData } from '../../../redux/saga/search/action';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 const {Search} = Input;
-const PosterSearch = () => {
+const PosterSearch = ({loadingSearch}) => {
     const dispatch = useDispatch();
     const [filter, setFilter] = useState('name')
     const changeFilter = (val) => {
@@ -24,6 +24,7 @@ const PosterSearch = () => {
                         allowClear
                         enterButton="Search"
                         size="large"
+                        loading={loadingSearch}
                         onSearch={(val)=>{if(val.trim().length > 0){ return dispatch(userSearchData(filter, val))}}}
                     />
                 </div>

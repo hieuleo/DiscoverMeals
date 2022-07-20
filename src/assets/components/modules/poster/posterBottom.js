@@ -4,11 +4,21 @@ import { Row, Col, Input} from 'antd';
 import post1 from '../../../img/post-1.png';
 import post2 from '../../../img/post-2.png';
 import post3 from '../../../img/post-3.png';
-// import { Link } from "react-router-dom";
+import { useDispatch} from 'react-redux';
+import { addKeySearch } from '../../../redux/reducer/home/searchHome';
+import { useNavigate } from 'react-router-dom';
 
 const PossterBottom = () => {
-    const { Search } = Input;
 
+    const navigate = useNavigate();
+    const { Search } = Input;
+    const dispatch = useDispatch()
+    const onSearch = (val) => {
+        if(val){
+            dispatch(addKeySearch(val))
+            navigate("/search", { replace : true });
+        }
+    }
     return(
         <Row >
             <Col span={24} offset={0} className={styles.poster}>
@@ -23,7 +33,7 @@ const PossterBottom = () => {
                             enterButton="Search"
                             size="large"
                             // suffix={suffix}
-                            onSearch={(val)=>{console.log(val)}}
+                            onSearch={(val)=>{onSearch(val)}}
                         />
                     </Col>
                 </Row>

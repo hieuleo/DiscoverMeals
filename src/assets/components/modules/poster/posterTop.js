@@ -16,7 +16,7 @@ const PosterTop = () => {
                         <p  className={styles.title}>Explore the world of <span>food</span> with us</p>
                         <p className={styles.message}>we provide food discovery service by genre, locality, ingredients and more</p>
                         <a className={styles.start} href="#categories">Get Started</a>
-                        <a className={styles.call} href="#categories"><i className="fa-solid fa-phone"></i> Call Us </a>
+                        <a className={styles.call} href="8665562570"><i className="fa-solid fa-phone"></i> Call Us </a>
                     </Col>
                     <Col className={styles.posterItem} span={12}>
                         <img src={`${poster}`}/>

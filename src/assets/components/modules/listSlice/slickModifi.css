@@ -1,5 +1,6 @@
 .slick-list{
     padding: 20px 0 !important;
+    animation: show linear 0.3s;
 };
 
 .slick-slide > ant-col{

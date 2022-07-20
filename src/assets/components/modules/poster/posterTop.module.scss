@@ -6,9 +6,10 @@
     background-color: $background-color-sub-2;
     .posterItem{
         padding: 2rem;
+        animation: show linear 0.3s;
         .more{
             color: $background-color-button;
-            background-color: $background-color-title;
+            background-color: #f5c7c7;
             font-size: 1.8rem;
             display: inline-block;
             padding: .5rem 2rem;
@@ -75,6 +76,7 @@
             display: flex;
             justify-content: center;
             margin: 0;
+            animation: show2 linear 0.2s;
         }
     }
 }

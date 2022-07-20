@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useState,useEffect} from 'react';
 import { useParams } from "react-router-dom";
 import { LayoutComponent} from '../../components';
 import { detailAction } from '../../redux/saga/detail/action';
@@ -12,12 +12,15 @@ import { createStructuredSelector } from 'reselect';
 import { Row, Col, Button } from 'antd';
 import styles from './detail.module.css';
 import { getStateDataCart } from '../../redux/selector/cart/stateCart';
-import { addMeals } from '../../redux/reducer/cart/reducerCart';
+import { addMeals, deleteMeals } from '../../redux/reducer/cart/reducerCart';
 import { getStateUser} from '../../redux/selector/auth/stateAuth';
 import { useNavigate } from 'react-router-dom';
+import clsx from 'clsx';
 
 const DetailsPage = () =>{
 
+    const [check,setCheck] = useState();
+    const [show,setShow] = useState(false);
     let {id} = useParams();
     const dispatch = useDispatch()
     const navigate = useNavigate();
@@ -34,13 +37,31 @@ const DetailsPage = () =>{
         dispatch(detailAction(id))
     },[])
 
+    useEffect(() =>{
+        setCheck(dataCart.find(item => item.idMeal === id))
+        if(check && user !== null) {
+            setShow(true)
+        }else{
+            console.log('k')
+        }
+    },[check])
+
+
     const addFavourite = (id, data) =>{
         if (user !== null){
             if (data.idMeal){
                 dispatch(addMeals(id, data))
+                setShow(true)
             }
         }else{
             navigate("/login", { replace : true });
+        }
+    }
+
+    const removeFavourite = () =>{
+        if (dataDetail.idMeal){
+            dispatch(deleteMeals(dataDetail.idMeal))
+            setShow(false)
         }
     }
 
@@ -57,10 +78,19 @@ const DetailsPage = () =>{
                                 </a>
                         </Col>
                         <Col span={16} className={styles.info}>
-                        <Button type="primary" className={styles.btn}  onClick={()=>{addFavourite(dataDetail.idMeal, dataDetail)}}>
-                            favourite
-                            <i className="fa-solid fa-heart"></i>
-                        </Button> 
+                        {
+                            show ? (
+                                <Button type="primary" className={clsx(styles.btn, styles.remove)}  onClick={()=>{removeFavourite()}}>
+                                    Remove
+                                    <i className="fa-solid fa-xmark"></i>
+                                </Button> 
+                            ):(
+                                <Button type="primary" className={styles.btn}  onClick={()=>{addFavourite(dataDetail.idMeal, dataDetail)}}>
+                                    favourite
+                                    <i className="fa-solid fa-heart"></i>
+                                </Button> 
+                            )
+                        }
                             <h2><span>Meal: </span> {dataDetail.strMeal}</h2>
                             <p><span>Country: </span> {dataDetail.strArea}</p>
                             <p><span>Category:  </span>{dataDetail.strCategory}</p>

@@ -1,7 +1,7 @@
 @import '../../../../rootStyles.module.scss';
 
 .ramdom{
-    // background-color: $background-color-title!important;
+    animation: show linear 0.3s;
     padding-bottom: 8rem;
     padding-top: 1rem;
     .header{

@@ -5,6 +5,7 @@ import searchReducer from "./search/search";
 import detailReducer from "./detail/detail";
 import cartReducer from "./cart/reducerCart";
 import authReducer from "./auth/auth";
+import searchHomeReducer from "./home/searchHome";
 import storage from 'redux-persist/lib/storage'; ////redux-persist
 import { persistReducer } from 'redux-persist';  //redux-persist
 
@@ -18,7 +19,13 @@ const configAuthPersistReducer = {
     key: 'user-App-Meal',
     storage,
     whitelist: ['user'] 
-}
+};
+
+const configSearchHomeReducer = {
+    key: 'user-App-Meal',
+    storage,
+    whitelist: ['keySearch'] 
+};
 
 const rootReducer = combineReducers({
     home: homeReducer,
@@ -27,6 +34,7 @@ const rootReducer = combineReducers({
     detail: detailReducer,
     cart: persistReducer(configCartPersistReducer,cartReducer),
     auth: persistReducer(configAuthPersistReducer,authReducer),
+    searchHome: persistReducer(configSearchHomeReducer,searchHomeReducer),
 });
 
 export default rootReducer;

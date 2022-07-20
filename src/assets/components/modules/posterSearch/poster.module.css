@@ -23,6 +23,43 @@ h1, h2, h3, h4, h5, h6, P {
   padding: 0;
 }
 
+@-webkit-keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes show2 {
+  from {
+    opacity: 0;
+    transform: translateX(5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+@keyframes show2 {
+  from {
+    opacity: 0;
+    transform: translateX(5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
 .poster {
   padding: 13.4rem 0 6rem 0;
   font-size: 0.8rem;
@@ -31,6 +68,8 @@ h1, h2, h3, h4, h5, h6, P {
   flex-flow: column;
   justify-content: center;
   align-items: center;
+  -webkit-animation: show linear 0.3s;
+          animation: show linear 0.3s;
 }
 .poster h2 {
   font-size: 3.2rem;

@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import loadable from '@loadable/component';
 import { useDispatch, useSelector } from 'react-redux';
 import { 
     getStateDataHome,
@@ -51,7 +50,7 @@ const HomePages = () => {
             {/* poster wellcome */}
             <PosterTop/>
             {/* categories */}
-            <Row>
+            <Row id='categories'>
                 <Col span={24} className={styles.colSlider}>
                     <Row>
                         <Col span={22} offset={1}>

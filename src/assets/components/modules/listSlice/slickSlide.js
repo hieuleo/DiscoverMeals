@@ -12,7 +12,7 @@ import { Card, Col, Skeleton} from 'antd';
 const { Meta } = Card;
 
 const SliderComponent = ({data,config, loading}) => {
-    const slugify = require('slugify')
+    // const slugify = require('slugify')
     let settings = config;
 
     if (loading) {

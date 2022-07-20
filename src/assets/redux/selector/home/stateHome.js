@@ -2,6 +2,7 @@ import { createDraftSafeSelector } from '@reduxjs/toolkit';
 
 const stateHome = state => state.home;
 const stateRandom = state => state.random;
+const stateSearchHome = state => state.searchHome;
 
 const getStateLoadingHome = createDraftSafeSelector(
     stateHome,
@@ -34,6 +35,11 @@ const getStateErrorRandom = createDraftSafeSelector(
     state => state.errorRandom
 );
 
+const getStateSearchHome = createDraftSafeSelector(
+    stateSearchHome,
+    state => state.keySearch
+);
+
 export {
     getStateDataHome,
     getStateErrorHome,
@@ -41,4 +47,5 @@ export {
     getStateLoadingRandom,
     getStateDataRandom,
     getStateErrorRandom,
+    getStateSearchHome
 };

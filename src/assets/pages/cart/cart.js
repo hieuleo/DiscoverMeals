@@ -6,6 +6,7 @@ import { getStateDataCart } from '../../redux/selector/cart/stateCart';
 import { useDispatch, useSelector } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { deleteMeals } from '../../redux/reducer/cart/reducerCart';
+import { Link } from 'react-router-dom';
 const CartPage = () => {
     const dispatch = useDispatch()
     const {dataCart} = useSelector(createStructuredSelector({
@@ -25,7 +26,9 @@ const CartPage = () => {
                                 <Col key={item.idMeal} span={24} className={styles.container}>
                                     <Row>
                                         <Col span={6} >
-                                            <img src={item.strMealThumb}/>
+                                            <Link to={`/Detail/${item.idMeal}`} >
+                                                <img src={item.strMealThumb}/>
+                                            </Link>
                                         </Col>
                                         <Col span={18} >
                                             <h2>{item.strMeal}</h2>

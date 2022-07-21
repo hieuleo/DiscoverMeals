@@ -27,7 +27,7 @@ $font-dancing: 'Dancing Script', cursive;
     box-sizing: border-box;
     text-decoration: none;
     outline: none; border:none;
-    text-transform: capitalize;
+    text-transform: initial;
     // transition: all .2s linear;
 };
 
@@ -35,6 +35,10 @@ $font-dancing: 'Dancing Script', cursive;
     // background: $blue-color;
     // color: $text-color;
 };
+
+*:first-letter{
+    text-transform: capitalize
+}
 
 html{
     font-family: 'Roboto', sans-serif;

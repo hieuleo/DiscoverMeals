@@ -1,6 +1,6 @@
 import React, {useState,useEffect} from 'react';
 import { useParams } from "react-router-dom";
-import { LayoutComponent} from '../../components';
+import { LayoutComponent, CommentComponent} from '../../components';
 import { detailAction } from '../../redux/saga/detail/action';
 import { useDispatch, useSelector } from 'react-redux';
 import { 
@@ -8,10 +8,11 @@ import {
     getStateDataDetail,
     getStateErrorDetail,
 } from '../../redux/selector/detail/detail';
-import { createStructuredSelector } from 'reselect';
-import { Row, Col, Button } from 'antd';
-import styles from './detail.module.css';
 import { getStateDataCart } from '../../redux/selector/cart/stateCart';
+import {getStateListsComment} from '../../redux/selector/comment/comment';
+import { createStructuredSelector } from 'reselect';
+import { Row, Col, Button, Skeleton } from 'antd';
+import styles from './detail.module.css';
 import { addMeals, deleteMeals } from '../../redux/reducer/cart/reducerCart';
 import { getStateUser} from '../../redux/selector/auth/stateAuth';
 import { useNavigate } from 'react-router-dom';
@@ -25,12 +26,13 @@ const DetailsPage = () =>{
     const dispatch = useDispatch()
     const navigate = useNavigate();
 
-    const {loading,dataDetail,errorDetail, dataCart, user} = useSelector(createStructuredSelector({
+    const {loading,dataDetail, dataCart, user, listComments} = useSelector(createStructuredSelector({
         loading: getStateLoadingDetail,
         dataDetail: getStateDataDetail,
         errorDetail: getStateErrorDetail,
         dataCart: getStateDataCart,
         user: getStateUser,
+        listComments: getStateListsComment
     }));
 
     useEffect(() =>{
@@ -42,7 +44,7 @@ const DetailsPage = () =>{
         if(check && user !== null) {
             setShow(true)
         }else{
-            console.log('k')
+            // console.log('k')
         }
     },[check])
 
@@ -63,6 +65,25 @@ const DetailsPage = () =>{
             dispatch(deleteMeals(dataDetail.idMeal))
             setShow(false)
         }
+    }
+
+    if (loading) {
+        return (
+            <LayoutComponent>
+            <Row>
+                <Col span={22}  offset={1}>
+                    <Row className={styles.detail}>
+                        <Col span={8} className={styles.thumb}>
+                            <Skeleton active />
+                        </Col>
+                        <Col span={16} className={styles.info}>
+                            <Skeleton active />
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
+        </LayoutComponent>
+        )
     }
 
     return (
@@ -100,6 +121,10 @@ const DetailsPage = () =>{
                         </Col>
                         <Col span={24} className={styles.dis}>
                             <p>{dataDetail.strInstructions}</p>
+                        </Col>
+                        {/* comment */}
+                        <Col span={24}>
+                            <CommentComponent dataUser={user} listComments={listComments} dataDetail={dataDetail}/>
                         </Col>
                     </Row>
                 </Col>

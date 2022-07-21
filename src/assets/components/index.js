@@ -7,3 +7,4 @@ export { default as RamdomMeal} from './modules/ramdomMeal/ramdomMeal';
 export { default as PosterSearch} from './modules/posterSearch/posterSearch';
 export { default as ListComponent} from './modules/card/list';
 export { default as ProtectedLayout} from './modules/protected/protectedLayout';
+export { default as CommentComponent} from './modules/comment/comment';

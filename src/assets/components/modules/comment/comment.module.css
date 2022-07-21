@@ -1,0 +1,134 @@
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: initial;
+}
+
+*:first-letter {
+  text-transform: capitalize;
+}
+
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgba(253, 231, 231, 0.3843137255);
+}
+
+h1, h2, h3, h4, h5, h6, P {
+  margin: 0;
+  padding: 0;
+}
+
+@-webkit-keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes show2 {
+  from {
+    opacity: 0;
+    transform: translateX(5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+@keyframes show2 {
+  from {
+    opacity: 0;
+    transform: translateX(5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+.header h2 {
+  font-size: 1.9rem;
+  font-weight: bold;
+  padding: 1.8rem 0;
+}
+
+.list {
+  background-color: #ffffff;
+  padding: 3.2rem 2.8rem;
+}
+.list .item {
+  padding: 2.4rem 0;
+  border: 1px solid #ccc;
+  margin: 0.8rem 0;
+  position: relative;
+  border-radius: 1.8rem;
+}
+.list .item .avatar {
+  text-align: center;
+}
+.list .item .avatar img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.list .item .avatar p {
+  color: #595959;
+  font-size: 1rem;
+  padding: 0.8rem 0 0 0;
+}
+.list .item .content h2 {
+  color: #000;
+  font-size: 1.7rem;
+}
+.list .item .content p {
+  color: #2e2e2e;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  text-transform: initial;
+}
+.list .item .content p:first-letter {
+  text-transform: capitalize;
+}
+.list .item .remove {
+  position: absolute;
+  top: 1.4rem;
+  right: 2.4rem;
+  border-radius: 0.8rem;
+}
+.list .item .remove i {
+  color: #2e2e2e;
+  font-size: 1.8rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+.list .item .remove:hover {
+  background-color: #f54748;
+}
+.list .item .remove:hover i {
+  color: #ffffff;
+}
+.list .error {
+  color: #2e2e2e;
+  font-size: 1.6rem;
+}/*# sourceMappingURL=comment.module.css.map */

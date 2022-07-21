@@ -6,6 +6,7 @@ import detailReducer from "./detail/detail";
 import cartReducer from "./cart/reducerCart";
 import authReducer from "./auth/auth";
 import searchHomeReducer from "./home/searchHome";
+import commentReducer from "./comment/comment";
 import storage from 'redux-persist/lib/storage'; ////redux-persist
 import { persistReducer } from 'redux-persist';  //redux-persist
 
@@ -27,6 +28,12 @@ const configSearchHomeReducer = {
     whitelist: ['keySearch'] 
 };
 
+const configCommentReducer = {
+    key: 'list-comment-user',
+    storage,
+    whitelist: ['listComments'] 
+};
+
 const rootReducer = combineReducers({
     home: homeReducer,
     random: randomReducer,
@@ -35,6 +42,7 @@ const rootReducer = combineReducers({
     cart: persistReducer(configCartPersistReducer,cartReducer),
     auth: persistReducer(configAuthPersistReducer,authReducer),
     searchHome: persistReducer(configSearchHomeReducer,searchHomeReducer),
+    comment: persistReducer(configCommentReducer,commentReducer),
 });
 
 export default rootReducer;

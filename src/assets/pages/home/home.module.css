@@ -6,12 +6,13 @@
   text-decoration: none;
   outline: none;
   border: none;
-  text-transform: capitalize;
+  text-transform: initial;
 }
 
 html {
   font-family: "Roboto", sans-serif;
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -23,6 +24,43 @@ h1, h2, h3, h4, h5, h6, P {
   padding: 0;
 }
 
+@-webkit-keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes show2 {
+  from {
+    opacity: 0;
+    transform: translateX(5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+@keyframes show2 {
+  from {
+    opacity: 0;
+    transform: translateX(5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
 .colSlider .headerSlider {
   padding: 1.5rem 0 1rem 0.2rem;
   font-size: 2.8rem;

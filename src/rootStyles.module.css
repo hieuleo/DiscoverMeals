@@ -6,6 +6,10 @@
   text-decoration: none;
   outline: none;
   border: none;
+  text-transform: initial;
+}
+
+*:first-letter {
   text-transform: capitalize;
 }
 

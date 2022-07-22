@@ -7,6 +7,12 @@ const getStateListsComment = createDraftSafeSelector(
     state => state.listComments
 );
 
+const getStateErrComment = createDraftSafeSelector(
+    stateComment,
+    state => state.err
+);
+
 export {
-    getStateListsComment
+    getStateListsComment,
+    getStateErrComment
 };

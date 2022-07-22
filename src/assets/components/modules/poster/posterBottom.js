@@ -15,7 +15,7 @@ const PossterBottom = () => {
     const dispatch = useDispatch()
     const onSearch = (val) => {
         if(val){
-            dispatch(addKeySearch(val))
+            dispatch(addKeySearch(val, 'name'))
             navigate("/search", { replace : true });
         }
     }
@@ -23,11 +23,11 @@ const PossterBottom = () => {
         <Row >
             <Col span={24} offset={0} className={styles.poster}>
                 <Row>
-                    <Col span={12} className={styles.header}>
+                    <Col lg={12} sm={24} className={styles.header}>
                         <h2>Search</h2>
                         <p> <img src={`${post1}`}></img> Total Meals: <span>283</span> <img src={`${post2}`}></img> Total Ingredients: <span>574</span> <img src={`${post3}`}></img> Images: <span>283</span></p>
                     </Col>
-                    <Col span={12} className={styles.search}>
+                    <Col lg={12} sm={24} className={styles.search}>
                         <Search
                             placeholder="input search text"
                             enterButton="Search"

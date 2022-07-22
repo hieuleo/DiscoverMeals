@@ -24,7 +24,7 @@ const RamdomMeal = ({loading, data}) => {
                     </Col>
                 </Row>
                 <Row>
-                    <Col span={12} >
+                    <Col lg={12} sm={24}>
                         <Link to={`/Detail/${data.idMeal}`} className={styles.Link}>
                             <img  className={styles.img} src={`${data.strMealThumb}`}/>
                             <h2 className={styles.imgTitle}>{data.strMeal}</h2>
@@ -32,7 +32,7 @@ const RamdomMeal = ({loading, data}) => {
                         </Link>
 
                     </Col> 
-                    <Col span={12} className={styles.description}>
+                    <Col lg={12} sm={24}className={styles.description}>
                         <h3><span>Meal: </span> {data.strMeal}</h3>
                         <p><span>Country: </span> {data.strArea}</p>
                         <p><span>Category:  </span>{data.strCategory}</p>

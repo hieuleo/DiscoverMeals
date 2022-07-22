@@ -9,6 +9,10 @@
   text-transform: initial;
 }
 
+*:first-letter {
+  text-transform: capitalize;
+}
+
 html {
   font-family: "Roboto", sans-serif;
   font-size: 62.5%;

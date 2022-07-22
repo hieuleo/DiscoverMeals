@@ -50,7 +50,7 @@ const ListComponent = ({data, loading}) => {
             <Col span={22} offset={1}>
                 <Row gutter={[16, 16]}>
                     {data.map(item =>(
-                        <Col span={6} key={item.idMeal}>
+                        <Col xxl={6} lg={8} md={12} key={item.idMeal}>
                             <Link to={`/Detail/${item.idMeal}`}>
                                 <Card
                                     hoverable

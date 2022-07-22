@@ -9,7 +9,7 @@ import {
     getStateErrorDetail,
 } from '../../redux/selector/detail/detail';
 import { getStateDataCart } from '../../redux/selector/cart/stateCart';
-import {getStateListsComment} from '../../redux/selector/comment/comment';
+import {getStateListsComment } from '../../redux/selector/comment/comment';
 import { createStructuredSelector } from 'reselect';
 import { Row, Col, Button, Skeleton } from 'antd';
 import styles from './detail.module.css';
@@ -19,7 +19,6 @@ import { useNavigate } from 'react-router-dom';
 import clsx from 'clsx';
 
 const DetailsPage = () =>{
-
     const [check,setCheck] = useState();
     const [show,setShow] = useState(false);
     let {id} = useParams();
@@ -32,27 +31,30 @@ const DetailsPage = () =>{
         errorDetail: getStateErrorDetail,
         dataCart: getStateDataCart,
         user: getStateUser,
-        listComments: getStateListsComment
+        listComments: getStateListsComment,
     }));
+
+    console.log(dataCart);
 
     useEffect(() =>{
         dispatch(detailAction(id))
-    },[])
+    },[]);
 
     useEffect(() =>{
-        setCheck(dataCart.find(item => item.idMeal === id))
-        if(check && user !== null) {
-            setShow(true)
-        }else{
-            // console.log('k')
+        if (user && dataCart[user.id]){
+            setCheck(dataCart[user.id].find(item => item.idMeal === id))
+            if(check) {
+                setShow(true)
+            }else{
+                // console.log('k')
+            }
         }
-    },[check])
+    },[check, user])
 
-
-    const addFavourite = (id, data) =>{
+    const addFavourite = (idUser,idMeal, data) =>{
         if (user !== null){
             if (data.idMeal){
-                dispatch(addMeals(id, data))
+                dispatch(addMeals(idUser,idMeal, data))
                 setShow(true)
             }
         }else{
@@ -62,10 +64,10 @@ const DetailsPage = () =>{
 
     const removeFavourite = () =>{
         if (dataDetail.idMeal){
-            dispatch(deleteMeals(dataDetail.idMeal))
+            dispatch(deleteMeals(user.id,dataDetail.idMeal))
             setShow(false)
         }
-    }
+    };
 
     if (loading) {
         return (
@@ -74,9 +76,12 @@ const DetailsPage = () =>{
                 <Col span={22}  offset={1}>
                     <Row className={styles.detail}>
                         <Col span={8} className={styles.thumb}>
+                            <Skeleton avatar active />
+                        </Col>
+                        <Col span={16} className={clsx(styles.info, styles.skeleton)}>
                             <Skeleton active />
                         </Col>
-                        <Col span={16} className={styles.info}>
+                        <Col span={24} className={styles.dis}>
                             <Skeleton active />
                         </Col>
                     </Row>
@@ -106,7 +111,7 @@ const DetailsPage = () =>{
                                     <i className="fa-solid fa-xmark"></i>
                                 </Button> 
                             ):(
-                                <Button type="primary" className={styles.btn}  onClick={()=>{addFavourite(dataDetail.idMeal, dataDetail)}}>
+                                <Button type="primary" className={styles.btn}  onClick={()=>{addFavourite(user ?user.id : null,dataDetail.idMeal, dataDetail)}}>
                                     favourite
                                     <i className="fa-solid fa-heart"></i>
                                 </Button> 

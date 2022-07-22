@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     keySearch: '',
+    category: 'name',
 };
 
 const searchHomeReducer = createSlice({
@@ -10,11 +11,18 @@ const searchHomeReducer = createSlice({
     reducers: {
         addKeySearch: {
             reducer: (state,action) => {
-                state.keySearch = action.payload
+                const {value, category} = action.payload;
+                state.keySearch = value;
+                if (category){
+                    state.category = category;
+                }
             },
-            prepare: (val) => {
+            prepare: (val, category) => {
                 return {
-                    payload: val
+                    payload: {
+                        value: val,
+                        category: category
+                    }
                 }
             }
         },

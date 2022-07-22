@@ -120,12 +120,20 @@ h1, h2, h3, h4, h5, h6, P {
   color: #2e2e2e;
   font-size: 1.8rem;
   padding: 1rem;
-  cursor: pointer;
 }
 .list .item .remove:hover {
+  cursor: no-drop;
+}
+.list .item .remove.active {
+  display: block;
+}
+.list .item .remove.active i {
+  cursor: pointer;
+}
+.list .item .remove.active:hover {
   background-color: #f54748;
 }
-.list .item .remove:hover i {
+.list .item .remove.active:hover i {
   color: #ffffff;
 }
 .list .error {

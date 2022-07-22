@@ -55,10 +55,22 @@
                 color: $text-color;
                 font-size: 1.8rem;
                 padding: 1rem;
+                // cursor: pointer;
+            }
+        }
+
+        .remove:hover{
+            cursor: no-drop;
+        }
+
+        .remove.active{
+            display: block;
+            i{
                 cursor: pointer;
             }
         }
-        .remove:hover{
+
+        .remove.active:hover{
             background-color:$background-color-icon;
             i{
                 color: $while-color;

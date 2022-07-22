@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import styles from "./comment.module.css";
-import { Row, Col, Avatar, Button, Comment, Form, Input} from 'antd';
+import { Row, Col, Avatar, Button, Comment, Form, Input, message} from 'antd';
 import {addComment, deleteComment} from '../../../redux/reducer/comment/comment';
 import { useDispatch} from 'react-redux';
+import clsx from "clsx";
 const { TextArea } = Input;
 
 const Editor = ({ onChange, onSubmit, submitting, value }) => (
@@ -66,15 +67,18 @@ const CommentComponent = ({dataDetail, dataUser, listComments}) => {
     };
 
     const handleDelete = (idMeal, idComment) => {
-        dispatch(deleteComment(idMeal, idComment))
+        const idUserComent = dataUser ? dataUser.id : undefined
+        if (idMeal && idComment && idUserComent !== undefined){
+            dispatch(deleteComment(idMeal, idComment, idUserComent))
+        }else{
+            message.error('This is an error message');
+        }
     }
 
-    console.log(listComments)
-    
     const handleChange = (e) => {
         setValue(e.target.value);
     };
-    
+
     return (
         <Row>
             {/* comment imput */}
@@ -93,7 +97,7 @@ const CommentComponent = ({dataDetail, dataUser, listComments}) => {
             </Col>
             {/* comment list */}
             <Col span={22} offset={1} className={styles.header}>
-                    <h2>Reviews:</h2>
+                    <h2>Reviews: {commentData ? commentData.length : '0'}</h2>
             </Col>
             <Col span={22} offset={1} className={styles.list}>
                 <Row>
@@ -109,7 +113,7 @@ const CommentComponent = ({dataDetail, dataUser, listComments}) => {
                                     <p>{item.comment}</p>
                                 </Col>
                             </Row>
-                            <div className={styles.remove} onClick={() => handleDelete(dataDetail.idMeal,item.idComment)}>
+                            <div className={clsx(styles.remove, dataUser && item.idUser === dataUser.id ? styles.active : undefined)} onClick={() => handleDelete(dataDetail.idMeal, item.idComment)}>
                                 <i className="fa-solid fa-xmark"></i>
                             </div>
                         </Col>

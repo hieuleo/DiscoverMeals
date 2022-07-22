@@ -25,7 +25,7 @@ const configAuthPersistReducer = {
 const configSearchHomeReducer = {
     key: 'user-App-Meal',
     storage,
-    whitelist: ['keySearch'] 
+    whitelist: ['keySearch','category'] 
 };
 
 const configCommentReducer = {

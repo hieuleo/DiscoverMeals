@@ -9,6 +9,10 @@
   text-transform: initial;
 }
 
+*:first-letter {
+  text-transform: capitalize;
+}
+
 html {
   font-family: "Roboto", sans-serif;
   font-size: 62.5%;
@@ -65,13 +69,14 @@ h1, h2, h3, h4, h5, h6, P {
   padding-top: 14.4rem;
   padding-bottom: 4rem;
   font-size: 0.8rem;
-  min-height: 20rem;
+  min-height: 25rem;
   position: relative;
 }
 .detail .thumb {
   display: flex;
   flex-flow: column;
   align-items: center;
+  min-height: 10rem;
 }
 .detail .thumb img {
   width: 90%;
@@ -111,6 +116,9 @@ h1, h2, h3, h4, h5, h6, P {
 .detail .btn.remove i {
   margin-left: 0.5rem !important;
 }
+.detail .info {
+  min-height: 25rem;
+}
 .detail .info h2 {
   color: #000;
   font-size: 3.4rem;
@@ -128,10 +136,16 @@ h1, h2, h3, h4, h5, h6, P {
 .detail .info p span {
   color: #000;
 }
+.detail .info.skeleton {
+  padding-left: 3rem;
+}
+.detail .dis {
+  padding: 4rem 0;
+  min-height: 15rem;
+}
 .detail .dis p {
   color: #595959;
   font-size: 1.8rem;
   text-transform: initial;
   text-align: justify;
-  padding: 4rem 0;
 }/*# sourceMappingURL=detail.module.css.map */

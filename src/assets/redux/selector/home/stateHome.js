@@ -40,6 +40,11 @@ const getStateSearchHome = createDraftSafeSelector(
     state => state.keySearch
 );
 
+const getStateCategorySearchHome = createDraftSafeSelector(
+    stateSearchHome,
+    state => state.category
+);
+
 export {
     getStateDataHome,
     getStateErrorHome,
@@ -47,5 +52,6 @@ export {
     getStateLoadingRandom,
     getStateDataRandom,
     getStateErrorRandom,
-    getStateSearchHome
+    getStateSearchHome,
+    getStateCategorySearchHome
 };

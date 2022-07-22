@@ -8,7 +8,7 @@ const PosterTop = () => {
         <Row >
             <Col className={styles.posterTop} span={22} offset={1}>
                 <Row >
-                    <Col className={styles.posterItem} span={12}>
+                    <Col className={styles.posterItem} xl={12} sm={24}>
                         <div className={styles.more}>
                             More than Faster
                             <img src={`${cherryIcon}`}/>
@@ -18,7 +18,7 @@ const PosterTop = () => {
                         <a className={styles.start} href="#categories">Get Started</a>
                         <a className={styles.call} href="8665562570"><i className="fa-solid fa-phone"></i> Call Us </a>
                     </Col>
-                    <Col className={styles.posterItem} span={12}>
+                    <Col className={styles.posterItem} xl={12} sm={24}>
                         <img src={`${poster}`}/>
                     </Col>
                 </Row>

@@ -59,7 +59,6 @@ function* workerSagaSearch(action) {
         }
         if (data.hasOwnProperty('meals') && data['meals'] !== null) {
             const results = data.meals;
-            console.log(results);
             yield put(getDataSearchSuccess(results))
         }else{
             yield put(getDataSearchError({

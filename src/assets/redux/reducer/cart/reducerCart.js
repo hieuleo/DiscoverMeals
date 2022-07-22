@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     loadingCart: false,
-    dataCart: [],
+    dataCart: {},
     errorCart: null,
 };
 
@@ -14,31 +14,37 @@ const cartSlice = createSlice({
     reducers: {
         addMeals:{
             reducer: (state,action) => {
-                const {id, data} = action.payload;
-                const check = state.dataCart.find(item => item.idMeal === id);
-                if (!check) {
-                    state.dataCart.push(data);
+                const {idUser, idMeal, data} = action.payload;
+                if (state.dataCart.hasOwnProperty(idUser)){
+                    const check = state.dataCart[idUser].find(item => item.idMeal === idMeal);
+                    if (!check){
+                        state.dataCart[idUser].push(data)
+                    }
+                }else{
+                        state.dataCart[idUser] = [];
+                        state.dataCart[idUser].push(data)
                 }
             },
-            prepare: (id, data) => {
+            prepare: (idUser, idMeal, data) => {
                 return {
                     payload: {
-                        id: id,
+                        idUser: idUser,
+                        idMeal: idMeal,
                         data: data
                     }
                 }
             }},
         deleteMeals:{
             reducer: (state,action) => {
-                const {id} = action.payload;
-                const newList = state.dataCart.filter(item => item.idMeal !== id);
-                state.dataCart = newList;
-                
+                const {idUser, idMeal} = action.payload;
+                const newList = state.dataCart[idUser].filter(item => item.idMeal !== idMeal);
+                state.dataCart[idUser] = newList;
             },
-            prepare: (id) => {
+            prepare: (idUser, idMeal) => {
                 return {
                     payload: {
-                        id: id,
+                        idUser: idUser,
+                        idMeal: idMeal,
                     }
                 }
             }}, 

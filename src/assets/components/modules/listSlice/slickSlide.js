@@ -7,13 +7,24 @@ import "./slickModifi.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Card, Col, Skeleton} from 'antd';
-// import { CircularProgressbar ,buildStyles } from 'react-circular-progressbar';
+import { useDispatch} from 'react-redux';
+import { addKeySearch } from '../../../redux/reducer/home/searchHome';
+import { useNavigate } from 'react-router-dom';
 
 const { Meta } = Card;
 
 const SliderComponent = ({data,config, loading}) => {
     // const slugify = require('slugify')
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     let settings = config;
+
+    const onSearch = (value) => {
+        if(value){
+            dispatch(addKeySearch(value, 'category'))
+            navigate("/search", { replace : true });
+        }
+    }
 
     if (loading) {
         return (
@@ -40,7 +51,7 @@ const SliderComponent = ({data,config, loading}) => {
         <Slider {...settings}>
             {
                 data.map(item => (
-                    <Col key={item.idCategory}>
+                    <Col key={item.idCategory} onClick={()=>{onSearch(item.strCategory)}} >
                         <Link to={`/`} >
                             <Card
                                 hoverable

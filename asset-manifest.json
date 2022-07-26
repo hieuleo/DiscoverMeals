@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/DiscoverMeals/static/css/main.a59f0f18.css",
-    "main.js": "/DiscoverMeals/static/js/main.05fdabc3.js",
+    "main.js": "/DiscoverMeals/static/js/main.5308edca.js",
     "static/js/787.47190994.chunk.js": "/DiscoverMeals/static/js/787.47190994.chunk.js",
     "static/media/posterTop.png": "/DiscoverMeals/static/media/posterTop.23dda9814f5bc8f06be1.png",
     "static/media/cherry.png": "/DiscoverMeals/static/media/cherry.6edefd4352b3dbd6015a.png",
@@ -12,11 +12,11 @@
     "static/media/slick.woff": "/DiscoverMeals/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/DiscoverMeals/index.html",
     "main.a59f0f18.css.map": "/DiscoverMeals/static/css/main.a59f0f18.css.map",
-    "main.05fdabc3.js.map": "/DiscoverMeals/static/js/main.05fdabc3.js.map",
+    "main.5308edca.js.map": "/DiscoverMeals/static/js/main.5308edca.js.map",
     "787.47190994.chunk.js.map": "/DiscoverMeals/static/js/787.47190994.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a59f0f18.css",
-    "static/js/main.05fdabc3.js"
+    "static/js/main.5308edca.js"
   ]
 }

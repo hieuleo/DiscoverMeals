@@ -10,14 +10,14 @@ function RouterComponent() {
         <Routes>
           <Route path="/DiscoverMeals" element={<HomePages/>} />
           {/* <Route path="/" element={<HomePages />} /> */}
-          <Route path="/search" element={<SearchPage />} />
-          <Route path="/Detail/:id" element={<DetailsPage/>} /> 
-          <Route path="/favourite" element={
+          <Route path="/DiscoverMeals/search" element={<SearchPage />} />
+          <Route path="/DiscoverMeals/Detail/:id" element={<DetailsPage/>} /> 
+          <Route path="/DiscoverMeals/favourite" element={
             <ProtectedLayout>
               <CartPage/>
             </ProtectedLayout>
           }/> 
-          <Route path="/login" element={<LoginPage/>} /> 
+          <Route path="/DiscoverMeals/login" element={<LoginPage/>} /> 
       </Routes>
       </BrowserRouter>
     );

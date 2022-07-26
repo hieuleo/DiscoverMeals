@@ -30,7 +30,7 @@ const LoginPage = () => {
   useEffect(() =>{
     if (check.password && check.username) {
       if(user!== null) {
-        navigate("/home", { replace : true });
+        navigate("/DiscoverMeals", { replace : true });
       }else{
         message.error('Invalid account or password!!!');
       }

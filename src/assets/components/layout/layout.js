@@ -23,7 +23,7 @@ const LayoutComponent = ({home, search, favourite, contact, children}) => {
 
     const logoutEven = () => {
         dispatch(authReducer.logoutSuccess())
-        navigate("/login", { replace : true });
+        navigate("/DiscoverMeals/login", { replace : true });
     };
 
     const openMenuMobi = () => {
@@ -43,7 +43,7 @@ const LayoutComponent = ({home, search, favourite, contact, children}) => {
                         <Row>
                             <Col span={7} className={clsx(styles.logo)}>
                                 {/*  */}
-                                <Link className={clsx(styles.logoLink)} to={'/'}>
+                                <Link className={clsx(styles.logoLink)} to={'/DiscoverMeals'}>
                                     <img 
                                         className={clsx(styles.logoImg)}
                                         src={`${logo}`}
@@ -54,15 +54,15 @@ const LayoutComponent = ({home, search, favourite, contact, children}) => {
                                 </Link>
                             </Col>
                             <Col span={10} className={clsx(styles.navBar)}>
-                                <Link to={'/'} className={clsx(styles.navBarLink, home?styles.home:null)}>
+                                <Link to={'/DiscoverMeals'} className={clsx(styles.navBarLink, home?styles.home:null)}>
                                     Home
                                     <i className="fa-solid fa-angle-down"></i>
                                 </Link>
-                                <Link to={'/search'} className={clsx(styles.navBarLink, search?styles.search:null)}>
+                                <Link to={'/DiscoverMeals/search'} className={clsx(styles.navBarLink, search?styles.search:null)}>
                                     Search
                                     <i className="fa-solid fa-angle-down"></i>
                                 </Link>
-                                <Link to={'/favourite'} className={clsx(styles.navBarLink, favourite?styles.favourite:null)}>
+                                <Link to={'/DiscoverMeals/favourite'} className={clsx(styles.navBarLink, favourite?styles.favourite:null)}>
                                     favourite
                                     <i className="fa-solid fa-angle-down"></i>
                                 </Link>
@@ -74,13 +74,13 @@ const LayoutComponent = ({home, search, favourite, contact, children}) => {
                             <Col span={7} className={clsx(styles.athur)}>
                                 {
                                     user === null ? (
-                                        <Link to={'/login'} className={clsx(styles.login)}>
+                                        <Link to={'/DiscoverMeals/login'} className={clsx(styles.login)}>
                                             <i className="fa-solid fa-right-to-bracket"></i>
                                             login
                                         </Link>
                                     ):(
                                         <>
-                                            <button to={'/login'} className={clsx(styles.login, styles.logout)} onClick={() =>{logoutEven()}}>
+                                            <button to={'/DiscoverMeals/login'} className={clsx(styles.login, styles.logout)} onClick={() =>{logoutEven()}}>
                                                 logout
                                                 <i className="fa-solid fa-right-from-bracket"></i>
                                             </button>
@@ -107,7 +107,7 @@ const LayoutComponent = ({home, search, favourite, contact, children}) => {
                         <Row>
                             <Col className={clsx(styles.info)} xl={8} lg={24} sm={24}>
                                 {/* logo */}
-                                <Link className={clsx(styles.logoLink)} to={'/login'}>
+                                <Link className={clsx(styles.logoLink)} to={'/DiscoverMeals'}>
                                     <img 
                                         className={clsx(styles.logoImg)}
                                         src={`${logo}`}
@@ -172,15 +172,15 @@ const LayoutComponent = ({home, search, favourite, contact, children}) => {
                 </Row>
             </Col>
             <Col span={24} className={clsx(styles.mobi, menuMobi? styles.active: null)}>
-                <Link to={'/'} className={clsx(styles.navBarLink, home?styles.home:null)}>
+                <Link to={'/DiscoverMeals'} className={clsx(styles.navBarLink, home?styles.home:null)}>
                     Home
                     <i className="fa-solid fa-angle-down"></i>
                 </Link>
-                <Link to={'/search'} className={clsx(styles.navBarLink, search?styles.search:null)}>
+                <Link to={'/DiscoverMeals/search'} className={clsx(styles.navBarLink, search?styles.search:null)}>
                     Search
                     <i className="fa-solid fa-angle-down"></i>
                 </Link>
-                <Link to={'/favourite'} className={clsx(styles.navBarLink, favourite?styles.favourite:null)}>
+                <Link to={'/DiscoverMeals/favourite'} className={clsx(styles.navBarLink, favourite?styles.favourite:null)}>
                     favourite
                     <i className="fa-solid fa-angle-down"></i>
                 </Link>

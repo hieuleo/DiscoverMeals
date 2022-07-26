@@ -56,7 +56,7 @@ const DetailsPage = () =>{
                 setShow(true)
             }
         }else{
-            navigate("/login", { replace : true });
+            navigate("/DiscoverMeals/login", { replace : true });
         }
     }
 

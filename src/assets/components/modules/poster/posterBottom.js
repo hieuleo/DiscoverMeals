@@ -16,7 +16,7 @@ const PossterBottom = () => {
     const onSearch = (val) => {
         if(val){
             dispatch(addKeySearch(val, 'name'))
-            navigate("/search", { replace : true });
+            navigate("/DiscoverMeals/search", { replace : true });
         }
     }
     return(

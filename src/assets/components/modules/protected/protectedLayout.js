@@ -11,7 +11,7 @@ const ProtectedLayout = ({children}) => {
     
     const outlet = useOutlet();
     if ( user === null ) {
-        return <Navigate to={"/login"}/>
+        return <Navigate to={"/DiscoverMeals/login"}/>
     }
 
     return(

@@ -30,7 +30,7 @@ const CartPage = () => {
                                 <Col key={item.idMeal} span={24} className={styles.container}>
                                     <Row>
                                         <Col lg={6}  sm={24}>
-                                            <Link to={`/Detail/${item.idMeal}`} >
+                                            <Link to={`/DiscoverMeals/Detail/${item.idMeal}`} >
                                                 <img src={item.strMealThumb}/>
                                             </Link>
                                         </Col>

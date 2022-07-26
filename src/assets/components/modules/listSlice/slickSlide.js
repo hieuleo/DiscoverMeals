@@ -22,7 +22,7 @@ const SliderComponent = ({data,config, loading}) => {
     const onSearch = (value) => {
         if(value){
             dispatch(addKeySearch(value, 'category'))
-            navigate("/search", { replace : true });
+            navigate("/DiscoverMeals/search", { replace : true });
         }
     }
 

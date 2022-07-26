@@ -64,6 +64,7 @@ const LoginPage = () => {
             <Form.Item
               label="Username"
               name="username"
+              initialValue="admin"
               rules={[
                 {
                   required: true,
@@ -77,6 +78,7 @@ const LoginPage = () => {
             <Form.Item
               label="Password"
               name="password"
+              initialValue="admin"
               rules={[
                 {
                   required: true,

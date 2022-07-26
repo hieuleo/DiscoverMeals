@@ -51,7 +51,7 @@ const ListComponent = ({data, loading}) => {
                 <Row gutter={[16, 16]}>
                     {data.map(item =>(
                         <Col xxl={6} lg={8} md={12} key={item.idMeal}>
-                            <Link to={`/Detail/${item.idMeal}`}>
+                            <Link to={`/DiscoverMeals/Detail/${item.idMeal}`}>
                                 <Card
                                     hoverable
                                     cover={<img alt="example" src={`${item.strMealThumb}`}/>}

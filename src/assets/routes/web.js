@@ -8,8 +8,8 @@ function RouterComponent() {
       <BrowserRouter>
         <ScrollToTop />  
         <Routes>
-          <Route path="/" element={<HomePages/>} />
-          <Route path="/home" element={<HomePages />} />
+          <Route path="/DiscoverMeals" element={<HomePages/>} />
+          {/* <Route path="/" element={<HomePages />} /> */}
           <Route path="/search" element={<SearchPage />} />
           <Route path="/Detail/:id" element={<DetailsPage/>} /> 
           <Route path="/favourite" element={

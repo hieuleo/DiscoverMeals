@@ -28,15 +28,13 @@ const SearchPage = () => {
         searchHome: getStateSearchHome,
         category: getStateCategorySearchHome
     }));
-    const [keyValue, setKeyValue] = useState(searchHome)
-    useEffect(() => {
-        dispatch(requestDataSearchDefault())
-    },[]);
-
+    const [keyValue, ] = useState(searchHome)
     useEffect(() => {
         if(searchHome !== ''){
             dispatch(userSearchData(category,searchHome))
             dispatch(addKeySearch(''))
+        }else{
+            dispatch(requestDataSearchDefault())
         }
     },[]);
 

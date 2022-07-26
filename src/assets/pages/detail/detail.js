@@ -34,8 +34,6 @@ const DetailsPage = () =>{
         listComments: getStateListsComment,
     }));
 
-    console.log(dataCart);
-
     useEffect(() =>{
         dispatch(detailAction(id))
     },[]);
@@ -49,7 +47,7 @@ const DetailsPage = () =>{
                 // console.log('k')
             }
         }
-    },[check, user])
+    },[check, user]);
 
     const addFavourite = (idUser,idMeal, data) =>{
         if (user !== null){

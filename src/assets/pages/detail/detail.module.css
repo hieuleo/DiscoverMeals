@@ -79,6 +79,8 @@ h1, h2, h3, h4, h5, h6, P {
   min-height: 10rem;
 }
 .detail .thumb img {
+  -webkit-animation: show linear 0.3s;
+          animation: show linear 0.3s;
   width: 90%;
   border-radius: 50%;
 }
@@ -120,6 +122,8 @@ h1, h2, h3, h4, h5, h6, P {
   min-height: 25rem;
 }
 .detail .info h2 {
+  -webkit-animation: show linear 0.3s;
+          animation: show linear 0.3s;
   color: #000;
   font-size: 3.4rem;
   font-weight: bold;
@@ -130,6 +134,8 @@ h1, h2, h3, h4, h5, h6, P {
 }
 .detail .info p {
   color: #595959;
+  -webkit-animation: show linear 0.3s;
+          animation: show linear 0.3s;
   font-size: 1.8rem;
   margin: 0.8rem 0;
 }
@@ -144,6 +150,8 @@ h1, h2, h3, h4, h5, h6, P {
   min-height: 15rem;
 }
 .detail .dis p {
+  -webkit-animation: show linear 0.3s;
+          animation: show linear 0.3s;
   color: #595959;
   font-size: 1.8rem;
   text-transform: initial;

@@ -17,7 +17,7 @@ import { LayoutComponent, PosterTop , SliderComponent, PossterBottom, RamdomMeal
 
 const HomePages = () => {
     const dispatch = useDispatch()
-    const {loading, data, loadingCart,loadingRandom,dataRandom,errorRandom} = useSelector(createStructuredSelector({
+    const {loading, data, loadingCart, loadingRandom, dataRandom} = useSelector(createStructuredSelector({
         loading: getStateLoadingHome,
         data: getStateDataHome,
         error:getStateErrorHome,

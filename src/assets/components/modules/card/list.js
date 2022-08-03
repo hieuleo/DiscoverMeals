@@ -11,28 +11,28 @@ const ListComponent = ({data, loading}) => {
             <Row className={clsx(styles.list)}>
                 <Col span={22} offset={1}>
                     <Row gutter={[16, 16]}>
-                        <Col span={6}>
+                        <Col xxl={6} lg={8} md={12}>
                             <Link to={`./`}>
                                 <Card>
                                     <Skeleton active/>
                                 </Card>
                             </Link>
                         </Col>
-                        <Col span={6}>
+                        <Col xxl={6} lg={8} md={12}>
                             <Link to={`./`}>
                                 <Card>
                                     <Skeleton active/>
                                 </Card>
                             </Link>
                         </Col>
-                        <Col span={6}>
+                        <Col xxl={6} lg={8} md={12}>
                             <Link to={`./`}>
                                 <Card>
                                     <Skeleton active/>
                                 </Card>
                             </Link>
                         </Col>
-                        <Col span={6}>
+                        <Col xxl={6} lg={8} md={12}>
                             <Link to={`./`}>
                                 <Card>
                                     <Skeleton active/>
@@ -50,7 +50,7 @@ const ListComponent = ({data, loading}) => {
             <Col span={22} offset={1}>
                 <Row gutter={[16, 16]}>
                     {data.map(item =>(
-                        <Col xxl={6} lg={8} md={12} key={item.idMeal}>
+                        <Col xxl={6} lg={8} md={12} key={item.idMeal} className={clsx(styles.item)}>
                             <Link to={`/DiscoverMeals/Detail/${item.idMeal}`}>
                                 <Card
                                     hoverable

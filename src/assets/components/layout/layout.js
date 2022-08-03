@@ -133,18 +133,18 @@ const LayoutComponent = ({home, search, favourite, contact, children}) => {
                                     <Col className={clsx(styles.footerItem)} xl={4} lg={12} sm={24}>
                                         {/* About */}
                                         <h2>About</h2>
-                                        <Link to={'./'} className={clsx(styles.footerItemLink)}>About Us</Link>
-                                        <Link to={'./'} className={clsx(styles.footerItemLink)}>Featured</Link>
-                                        <Link to={'./'} className={clsx(styles.footerItemLink)}>News</Link>
-                                        <Link to={'./'} className={clsx(styles.footerItemLink)}>Discover</Link>
+                                        <Link to={'./err'} className={clsx(styles.footerItemLink)}>About Us</Link>
+                                        <Link to={'./err'} className={clsx(styles.footerItemLink)}>Featured</Link>
+                                        <Link to={'./err'} className={clsx(styles.footerItemLink)}>News</Link>
+                                        <Link to={'./err'} className={clsx(styles.footerItemLink)}>Discover</Link>
                                     </Col>
                                     <Col className={clsx(styles.footerItem)} xl={4} lg={12} sm={24}>
                                         {/* support */}
                                         <h2>support</h2>
-                                        <Link to={'./'} className={clsx(styles.footerItemLink)}>Api</Link>
-                                        <Link to={'./'} className={clsx(styles.footerItemLink)}>Tools</Link>
-                                        <Link to={'./'} className={clsx(styles.footerItemLink)}>FAQ</Link>
-                                        <Link to={'./'} className={clsx(styles.footerItemLink)}></Link>
+                                        <Link to={'./err'} className={clsx(styles.footerItemLink)}>Api</Link>
+                                        <Link to={'./err'} className={clsx(styles.footerItemLink)}>Tools</Link>
+                                        <Link to={'./err'} className={clsx(styles.footerItemLink)}>FAQ</Link>
+                                        <Link to={'./err'} className={clsx(styles.footerItemLink)}></Link>
                                     </Col>
                                     <Col className={clsx(styles.footerItem)} xl={7} lg={12} sm={24}>
                                         {/* contact */}

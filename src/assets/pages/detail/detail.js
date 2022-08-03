@@ -73,13 +73,13 @@ const DetailsPage = () =>{
             <Row>
                 <Col span={22}  offset={1}>
                     <Row className={styles.detail}>
-                        <Col span={8} className={styles.thumb}>
+                        <Col xxl={8} xl={24} sm={24} className={styles.thumb}>
                             <Skeleton avatar active />
                         </Col>
-                        <Col span={16} className={clsx(styles.info, styles.skeleton)}>
+                        <Col xxl={16} xl={24} sm={24} className={clsx(styles.info, styles.skeleton)}>
                             <Skeleton active />
                         </Col>
-                        <Col span={24} className={styles.dis}>
+                        <Col xxl={24} className={styles.dis}>
                             <Skeleton active />
                         </Col>
                     </Row>
@@ -94,14 +94,14 @@ const DetailsPage = () =>{
             <Row>
                 <Col span={22}  offset={1}>
                     <Row className={styles.detail}>
-                        <Col span={8} className={styles.thumb}>
+                        <Col xl={8} sm={24}  className={styles.thumb} >
                                 <img src={dataDetail.strMealThumb}></img>
                                 <a href={dataDetail.strYoutube} target="_blank"> 
                                     Tutorial Video
                                     <i className="fa-solid fa-play"></i>
                                 </a>
                         </Col>
-                        <Col span={16} className={styles.info}>
+                        <Col xl={16} sm={24}  className={styles.info}>
                         {
                             show ? (
                                 <Button type="primary" className={clsx(styles.btn, styles.remove)}  onClick={()=>{removeFavourite()}}>

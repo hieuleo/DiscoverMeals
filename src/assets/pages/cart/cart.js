@@ -15,8 +15,8 @@ const CartPage = () => {
         user: getStateUser,
     }));
 
-    console.log(dataCart)
-
+    console.log(dataCart);
+    
     return(
         <LayoutComponent favourite>
             <Row>
@@ -26,6 +26,7 @@ const CartPage = () => {
                             <h2>list of favorite meals: <span>{dataCart.length}</span></h2>
                         </Col>
                         {
+                            dataCart[user.id]?
                             dataCart[user.id].map( item => (
                                 <Col key={item.idMeal} span={24} className={styles.container}>
                                     <Row>
@@ -46,7 +47,8 @@ const CartPage = () => {
                                         remove
                                     </button>
                                 </Col>
-                            ))
+                            )):
+                            <p>not data</p>
                         }
                     </Row>
                 </Col>

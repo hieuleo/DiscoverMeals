@@ -17,12 +17,8 @@
             border-radius: 50%;
         };
         a{
-            margin: 1rem 0;
-            padding: 1rem 2.5rem;
-            color: $while-color;
-            background-color: $background-color-button;
-            font-size: 1.8rem;
-            border-radius: 3rem;
+            @include stylesButton($while-color,  $background-color-button, 1.8rem );
+            
             display: flex;
             align-items: center;
             i{

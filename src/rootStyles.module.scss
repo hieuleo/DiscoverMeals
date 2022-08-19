@@ -78,3 +78,17 @@ h1, h2, h3, h4, h5, h6,P{
         transform: translateX(0%)
     }
 }
+
+
+// @mixin: 
+// @include tenBien(gia tri truyen vao)
+
+@mixin stylesButton($color, $background, $fontSize){
+    color: $color;
+    background-color: $background;
+    font-size: $fontSize;
+    padding:  1rem 2.5rem;
+    margin-top: 2.5rem;
+    display: inline-block;
+    border-radius: 2.8rem;
+}

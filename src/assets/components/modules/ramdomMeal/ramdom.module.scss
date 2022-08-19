@@ -30,11 +30,9 @@
             text-transform: uppercase;
         };
         .btn{
-            color: $while-color;
-            background-color: $background-color-button;
+            @include stylesButton($while-color, $background-color-button, 1.8rem );
             padding: 1rem 3rem;
             border-radius: 3rem;
-            font-size: 1.8rem;
             margin-top: 1rem;
         }
 

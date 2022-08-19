@@ -98,9 +98,13 @@ h1, h2, h3, h4, h5, h6, P {
 .ramdom .Link .btn {
   color: #ffffff;
   background-color: #f54748;
+  font-size: 1.8rem;
+  padding: 1rem 2.5rem;
+  margin-top: 2.5rem;
+  display: inline-block;
+  border-radius: 2.8rem;
   padding: 1rem 3rem;
   border-radius: 3rem;
-  font-size: 1.8rem;
   margin-top: 1rem;
 }
 .ramdom .Link .btn:hover {

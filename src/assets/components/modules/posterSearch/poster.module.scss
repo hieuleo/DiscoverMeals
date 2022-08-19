@@ -26,13 +26,12 @@
 
     .change{
         .btn{
-            background-color: $background-color-button;
-            color: $while-color;
-            font-size: 1.7rem;
+            @include stylesButton($while-color, $background-color-button, 1.7rem );
             padding: .5rem 1.5rem;
             border-radius: 2rem;
             margin:0 .5rem;
             opacity: 0.4;
+            cursor: pointer;
         };
         .btn.active{
             opacity: 1;

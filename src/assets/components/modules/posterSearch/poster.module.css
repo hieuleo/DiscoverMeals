@@ -91,13 +91,18 @@ h1, h2, h3, h4, h5, h6, P {
   padding-top: 0.5rem;
 }
 .poster .change .btn {
-  background-color: #f54748;
   color: #ffffff;
+  background-color: #f54748;
   font-size: 1.7rem;
+  padding: 1rem 2.5rem;
+  margin-top: 2.5rem;
+  display: inline-block;
+  border-radius: 2.8rem;
   padding: 0.5rem 1.5rem;
   border-radius: 2rem;
   margin: 0 0.5rem;
   opacity: 0.4;
+  cursor: pointer;
 }
 .poster .change .btn.active {
   opacity: 1;

@@ -1,3 +1,22 @@
+# DiscoverMeals
+
+Ứng dụng web giúp người dùng khám phá công thức nấu ăn và lưu lại món yêu thích.
+
+## Công nghệ sử dụng
+- Frontend: React
+- Backend: Node.js + Express
+- Cơ sở dữ liệu: MongoDB
+- API: Spoonacular
+
+## Cách chạy ứng dụng
+
+```bash
+git clone https://github.com/tenban/DiscoverMeals.git
+npm install
+cd client
+npm install
+npm start
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
